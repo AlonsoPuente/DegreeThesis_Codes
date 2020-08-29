@@ -107,19 +107,145 @@ def getPageText(url):
 
 print("Scraping...")
 
-count_proj=5119
-for id_proj, url_proj in zip(data_final["id"][5119:], urls_list[5119:]):
+count_proj=0
+for id_proj, url_proj in zip(data_final["id"][:1703], urls_list[:1703]):
     comments_txt = getPageText(url_proj)    
     df_comments = {"ids":[id_proj], "comments":[comments_txt]}
     data_comments = pd.DataFrame(df_comments)
-    data_comments.to_csv (r'data_comentarios.csv', mode = 'a', sep = ',', index = False, header=False)
+    data_comments.to_csv (r'data_comentarios_p1.csv', mode = 'a', sep = ',', index = False, header=False)
     count_proj += 1
-    print(count_proj)    
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][1704:3407], urls_list[1704:3407]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p2.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj) 
 
-driver.quit()
+for id_proj, url_proj in zip(data_final["id"][3408:5111], urls_list[3408:5111]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p3.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][5112:6815], urls_list[5112:6815]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p4.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj) 
+
+for id_proj, url_proj in zip(data_final["id"][6816:8518], urls_list[6816:8518]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p5.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+
+for id_proj, url_proj in zip(data_final["id"][8519:10221], urls_list[8519:10221]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p6.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+
+for id_proj, url_proj in zip(data_final["id"][10222:11924], urls_list[10222:11924]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p7.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][11925:13627], urls_list[11925:13627]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p8.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][13628:15330], urls_list[13628:15330]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p9.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+
+for id_proj, url_proj in zip(data_final["id"][15331:17033], urls_list[15331:17033]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p10.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+
+for id_proj, url_proj in zip(data_final["id"][17034:18736], urls_list[17034:18736]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p11.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][18737:20439], urls_list[18737:20439]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p12.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][20440:22142], urls_list[20440:22142]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p13.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][22143:23845], urls_list[22143:23845]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p14.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][23846:25548], urls_list[23846:25548]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p15.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+    
+for id_proj, url_proj in zip(data_final["id"][25549:], urls_list[25549:]):
+    comments_txt = getPageText(url_proj)    
+    df_comments = {"ids":[id_proj], "comments":[comments_txt]}
+    data_comments = pd.DataFrame(df_comments)
+    data_comments.to_csv (r'data_comentarios_p16.csv', mode = 'a', sep = ',', index = False, header=False)
+    count_proj += 1
+    print(count_proj)
+driver.close()
 
 print('Ya terminó el scraping!')
 
-df_final = pd.read_csv('data_comentarios.csv',sep = ',', header=None, names = ['comments','ids'])
-df_final = df_final.reindex(columns=['ids','comments'])
-df_final.to_csv( "data_comentarios_final.csv", index=False, encoding='utf-8-sig')
+#extension = '.csv'
+#all_filenames = [i for i in glob.glob('*'.format(extension))]
+
+#combine all files in the list
+#data_comments = pd.concat([pd.read_csv(f) for f in all_filenames ])
+#export to csv
+#data_comments.to_csv('data_comentarios.csv', index=False, encoding='utf-8-sig')
+#df_final = pd.read_csv('data_comentarios.csv',sep = ',', header=None, names = ['comments','ids'])
+#df_final = df_final.reindex(columns=['ids','comments'])
+#df_final.to_csv( "data_comentarios_final.csv", index=False, encoding='utf-8-sig')
