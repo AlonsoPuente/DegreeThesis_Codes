@@ -21,6 +21,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from random import randint
 import time
 import re
+import random
+from datetime import datetime
+random.seed(datetime.now())
 
 print('Comenzando a correr el script')
 
