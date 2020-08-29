@@ -21,6 +21,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 from random import randint
 import time
 import re
+import random
+from datetime import datetime
+random.seed(datetime.now())
 
 print('Comenzando a correr el script')
 
@@ -107,7 +110,7 @@ def getPageText(url):
 
 print("Scraping...")
 
-count_proj=17034
+count_proj=17033
 for id_proj, url_proj in zip(data_final["id"][17034:18736], urls_list[17034:18736]):
     comments_txt = getPageText(url_proj)    
     df_comments = {"ids":[id_proj], "comments":[comments_txt]}
