@@ -113,7 +113,7 @@ for id_proj, url_proj in zip(data_final["id"][6815:8518], urls_list[6815:8518]):
     comments_txt = getPageText(url_proj)    
     df_comments = {"ids":[id_proj], "comments":[comments_txt]}
     data_comments = pd.DataFrame(df_comments)
-    data_comments.to_csv (r'data_comentarios_p5.csv', mode = 'a', sep = ',', index = False, header=False)
+    data_comments.to_csv (r'data_comentarios_p05.csv', mode = 'a', sep = ',', index = False, header=False)
     count_proj += 1
     print(count_proj)
         
