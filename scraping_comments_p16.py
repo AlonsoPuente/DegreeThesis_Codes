@@ -106,7 +106,8 @@ def getPageText(url):
 
     del(project_paragraphs)
     #project_comments = ' '.join(project_comments)    #Para concatenar todos los comentarios en 1 array
-    time.sleep(randint(1,20))
+    driver.quit()
+    time.sleep(randint(1,10))
     return project_comments
 
 print("Scraping...")
@@ -125,4 +126,3 @@ for id_proj, url_proj in zip(data_final["id"][25548:], urls_list[25548:]):
     print(count_proj)
 
 print('Ya terminó el scraping!')
-driver.quit()
