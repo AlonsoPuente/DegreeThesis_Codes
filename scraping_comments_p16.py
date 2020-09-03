@@ -102,10 +102,10 @@ def getPageText(url):
         project_text = project_text.replace(u'\n', u' ')
         project_text = re.sub(useless_characters, '', project_text)
         project_comments.append(project_text)
-        project_comments.append('中中中')
+        #project_comments.append('中中中')
 
     del(project_paragraphs)
-    project_comments = ' '.join(project_comments)    #Para concatenar todos los comentarios en 1 array
+    #project_comments = ' '.join(project_comments)    #Para concatenar todos los comentarios en 1 array
     time.sleep(randint(10,100))
     return project_comments
 
@@ -156,15 +156,4 @@ for id_proj, url_proj in zip(ids_adic, urls_adic):
     print(count_proj)
 
 print('Ya terminó el scraping!')
-driver.close()
-
-#extension = '.csv'
-#all_filenames = [i for i in glob.glob('*'.format(extension))]
-
-#combine all files in the list
-#data_comments = pd.concat([pd.read_csv(f) for f in all_filenames ])
-#export to csv
-#data_comments.to_csv('data_comentarios.csv', index=False, encoding='utf-8-sig')
-#df_final = pd.read_csv('data_comentarios.csv',sep = ',', header=None, names = ['comments','ids'])
-#df_final = df_final.reindex(columns=['ids','comments'])
-#df_final.to_csv( "data_comentarios_final.csv", index=False, encoding='utf-8-sig')
+driver.quit()
