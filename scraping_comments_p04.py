@@ -119,4 +119,4 @@ for id_proj, url_proj in zip(data_final["id"][5111:6815], urls_list[5111:6815]):
         
 
 print('Ya terminó el scraping!')
-driver.close()
+driver.quit()
