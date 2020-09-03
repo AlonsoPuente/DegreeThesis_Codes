@@ -112,7 +112,7 @@ def getPageText(url):
 print("Scraping...")
 
 count_proj=25548
-for id_proj, url_proj in zip(data_final["id"][25548:25550], urls_list[25548:25550]):
+for id_proj, url_proj in zip(data_final["id"][25548:], urls_list[25548:]):
     comments_txt = getPageText(url_proj)
     df_comments = {"ids":[id_proj], "comments":[comments_txt]}
     data_comments = pd.DataFrame(df_comments)
