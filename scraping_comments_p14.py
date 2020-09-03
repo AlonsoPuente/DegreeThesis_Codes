@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pandas as pd
 import glob
 import numpy as np
@@ -42,7 +43,7 @@ useless_characters = re.compile("["
         u"\U000024C2-\U0001F251"
         u"\U0001f926-\U0001f937"
         u"\U00010000-\U0010ffff"
-        u"\u2640-\u2642" 
+        u"\u2640-\u2642"
         u"\u2600-\u2B55"
         u"\u200d"
         u"\u23cf"
@@ -78,13 +79,13 @@ def getPageText(url):
     comments = driver.find_elements_by_css_selector('span.bg-ksr-green-700.white.px1.type-14.mr1, div.w100p')
     project_paragraphs = []
     for paragraph in comments:
-        project_paragraphs.append(paragraph.text) 
-    idx_comment_creador = [i for i in range(len(project_paragraphs)) if project_paragraphs[i] == "Creator"] 
+        project_paragraphs.append(paragraph.text)
+    idx_comment_creador = [i for i in range(len(project_paragraphs)) if project_paragraphs[i] == "Creator"]
     idx_comment_creador = [i+1 for i in idx_comment_creador]
 
     for index in sorted(idx_comment_creador, reverse=True):
         del project_paragraphs[index]
- 
+
     idx_comment_creador = [i for i in range(len(project_paragraphs)) if project_paragraphs[i] == "Creator"]
 
     for index in sorted(idx_comment_creador, reverse=True):
@@ -110,12 +111,15 @@ print("Scraping...")
 
 count_proj=22142
 for id_proj, url_proj in zip(data_final["id"][22142:23845], urls_list[22142:23845]):
-    comments_txt = getPageText(url_proj)    
+    comments_txt = getPageText(url_proj)
     df_comments = {"ids":[id_proj], "comments":[comments_txt]}
     data_comments = pd.DataFrame(df_comments)
     data_comments.to_csv (r'data_comentarios_p14.csv', mode = 'a', sep = ',', index = False, header=False)
     count_proj += 1
+    del data_comments
+    del df_comments
+    del comments_txt
     print(count_proj)
-        
+
 print('Ya terminó el scraping!')
 driver.quit()
