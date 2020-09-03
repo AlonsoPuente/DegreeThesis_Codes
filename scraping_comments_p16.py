@@ -56,10 +56,8 @@ options = Options()
 options.headless = True
 options.add_argument("--window-size=1920,1200")
 options.add_argument('--no-sandbox')
-#options.add_argument('--disable-dev-shm-usage')
 
 def getPageText(url):
-    #driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
     driver = webdriver.Chrome(options=options)
     driver.set_page_load_timeout(30)
     driver.get(url)
@@ -106,48 +104,13 @@ def getPageText(url):
 
     del(project_paragraphs)
     #project_comments = ' '.join(project_comments)    #Para concatenar todos los comentarios en 1 array
-    time.sleep(randint(10,100))
+    time.sleep(randint(1,20))
     return project_comments
 
 print("Scraping...")
 
-ids_adic=[1119957643,
- 1237497504,
- 1357810203,
- 148069053,
- 1484371707,
- 1601929183,
- 1724641191,
- 184740828,
- 1969564786,
- 2096086860,
- 283473954,
- 405995392,
- 52687056,
- 64626198,
- 759831834,
- 879587664]
-
-urls_adic=['https://www.kickstarter.com/projects/hometunnel/hometunnel-vpn-reach-your-soho-network-from-everyw?ref=discovery_category_newest',
- 'https://www.kickstarter.com/projects/immabee/immabe-emoji-join-the-swarm-bee-part-of-the-invasi?ref=category_newest',
- 'https://www.kickstarter.com/projects/lpsmarttech/lpreader-reads-printed-text-out-loud?ref=discovery_category_newest',
- 'https://www.kickstarter.com/projects/1397300529/railsapp?ref=discovery_category_newest',
- 'https://www.kickstarter.com/projects/675711226/luminous-tales?ref=category_newest',
- 'https://www.kickstarter.com/projects/1013189283/quicktask?ref=discovery_category_newest',
- 'https://www.kickstarter.com/projects/2142529557/getcerti-app-get-certificate-from-stars-and-events?ref=category_newest',
- 'https://www.kickstarter.com/projects/178023282/piso-the-most-versatile-flash-drive-yet?ref=discovery_category_newest',
- 'https://www.kickstarter.com/projects/423557947/nokanye-kanye-kardashian-blocker-app?ref=category',
- 'https://www.kickstarter.com/projects/bobblockus/usa-yachtsorg?ref=category_newest',
- 'https://www.kickstarter.com/projects/1553792197/rushbottom-journal-redefining-traditional-relation?ref=category_newest',
- 'https://www.kickstarter.com/projects/mementosmartframe/memento-smart-frame-worlds-most-advanced-4k-smart?ref=discovery_category_newest',
- 'https://www.kickstarter.com/projects/1789173116/gymatch-connecting-you-with-people-that-can-help-u?ref=category_newest',
- 'https://www.kickstarter.com/projects/bellalife/lifefile?ref=category',
- 'https://www.kickstarter.com/projects/1866865027/nixie-bargraph-kit?ref=discovery_category_newest',
- 'https://www.kickstarter.com/projects/1318970768/boxingwithstrangers?ref=discovery_category_newest']
-
-count_proj=0
-#count_proj=25548
-for id_proj, url_proj in zip(ids_adic, urls_adic):
+count_proj=25548
+for id_proj, url_proj in zip(data_final["id"][25548:], urls_list[25548:]):
     comments_txt = getPageText(url_proj)    
     df_comments = {"ids":[id_proj], "comments":[comments_txt]}
     data_comments = pd.DataFrame(df_comments)
