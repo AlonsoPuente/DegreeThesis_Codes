@@ -102,6 +102,7 @@ def getPageText(url):
         project_text = project_text.replace(u'\n', u' ')
         project_text = re.sub(useless_characters, '', project_text)
         project_comments.append(project_text)
+        project_comments.append('中中中')
 
     del(project_paragraphs)
     project_comments = ' '.join(project_comments)    #Para concatenar todos los comentarios en 1 array
@@ -110,17 +111,30 @@ def getPageText(url):
 
 print("Scraping...")
 
-count_proj=25548
-for id_proj, url_proj in zip(data_final["id"][25549:], urls_list[25549:]):
+ids_adic=[1119957643,
+ 1237497504,
+ 1357810203,
+ 148069053,
+ 1484371707]
+
+urls_adic=['https://www.kickstarter.com/projects/hometunnel/hometunnel-vpn-reach-your-soho-network-from-everyw?ref=discovery_category_newest',
+ 'https://www.kickstarter.com/projects/immabee/immabe-emoji-join-the-swarm-bee-part-of-the-invasi?ref=category_newest',
+ 'https://www.kickstarter.com/projects/lpsmarttech/lpreader-reads-printed-text-out-loud?ref=discovery_category_newest',
+ 'https://www.kickstarter.com/projects/1397300529/railsapp?ref=discovery_category_newest',
+ 'https://www.kickstarter.com/projects/675711226/luminous-tales?ref=category_newest']
+
+count_proj=0
+#count_proj=25548
+for id_proj, url_proj in zip(ids_adic, urls_adic):
     comments_txt = getPageText(url_proj)    
     df_comments = {"ids":[id_proj], "comments":[comments_txt]}
     data_comments = pd.DataFrame(df_comments)
     data_comments.to_csv (r'data_comentarios_p16.csv', mode = 'a', sep = ',', index = False, header=False)
     count_proj += 1
     print(count_proj)
-driver.close()
 
 print('Ya terminó el scraping!')
+driver.close()
 
 #extension = '.csv'
 #all_filenames = [i for i in glob.glob('*'.format(extension))]
