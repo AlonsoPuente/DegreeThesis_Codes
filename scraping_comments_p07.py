@@ -56,10 +56,8 @@ options = Options()
 options.headless = True
 options.add_argument("--window-size=1920,1200")
 options.add_argument('--no-sandbox')
-#options.add_argument('--disable-dev-shm-usage')
 
 def getPageText(url):
-    #driver = webdriver.Chrome(ChromeDriverManager().install(),options=options)
     driver = webdriver.Chrome(options=options)
     driver.set_page_load_timeout(30)
     driver.get(url)
@@ -104,31 +102,20 @@ def getPageText(url):
         project_comments.append(project_text)
 
     del(project_paragraphs)
-    project_comments = ' '.join(project_comments)    #Para concatenar todos los comentarios en 1 array
-    time.sleep(randint(10,100))
+    #project_comments = ' '.join(project_comments)    #Para concatenar todos los comentarios en 1 array
+    time.sleep(randint(1,20))
     return project_comments
 
 print("Scraping...")
 
 count_proj=10221
-for id_proj, url_proj in zip(data_final["id"][10222:11924], urls_list[10222:11924]):
+for id_proj, url_proj in zip(data_final["id"][10221:11924], urls_list[10221:11924]):
     comments_txt = getPageText(url_proj)    
     df_comments = {"ids":[id_proj], "comments":[comments_txt]}
     data_comments = pd.DataFrame(df_comments)
-    data_comments.to_csv (r'data_comentarios_p7.csv', mode = 'a', sep = ',', index = False, header=False)
+    data_comments.to_csv (r'data_comentarios_p07.csv', mode = 'a', sep = ',', index = False, header=False)
     count_proj += 1
     print(count_proj)
-driver.close()
-
+        
 print('Ya terminó el scraping!')
-
-#extension = '.csv'
-#all_filenames = [i for i in glob.glob('*'.format(extension))]
-
-#combine all files in the list
-#data_comments = pd.concat([pd.read_csv(f) for f in all_filenames ])
-#export to csv
-#data_comments.to_csv('data_comentarios.csv', index=False, encoding='utf-8-sig')
-#df_final = pd.read_csv('data_comentarios.csv',sep = ',', header=None, names = ['comments','ids'])
-#df_final = df_final.reindex(columns=['ids','comments'])
-#df_final.to_csv( "data_comentarios_final.csv", index=False, encoding='utf-8-sig')
+driver.quit()
