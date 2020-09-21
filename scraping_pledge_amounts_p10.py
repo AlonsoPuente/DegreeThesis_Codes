@@ -30,7 +30,7 @@ print('Comenzando a correr el script')
 
 data_final = pd.read_csv("Data final limpia.csv",sep = ',')
 urls_list = data_final["urls"].unique()
-urls_list = [url[:url.find('?ref=')] + '/comments' for url in urls_list]
+#urls_list = [url[:url.find('?ref=')] + '/comments' for url in urls_list]
 
 useless_characters = re.compile("["
         u"\U0001F600-\U0001F64F"  # emoticons
