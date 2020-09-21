@@ -60,6 +60,7 @@ options.add_argument('--no-sandbox')
 
 def getPageText(url):
     driver = webdriver.Chrome(options=options)
+    driver.set_page_load_timeout(30)
     driver.get(url)
     
     try:
