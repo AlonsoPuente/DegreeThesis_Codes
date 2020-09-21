@@ -88,7 +88,7 @@ for id_proj, url_proj in zip(data_final["id"][23845:25548], urls_list[23845:2554
     pledge_amounts = getPageText(url_proj)
     df_pledges = {"ids":[id_proj], "pledge_amount":[pledge_amounts]}
     data_pledges = pd.DataFrame(df_pledges)
-    data_pledges.to_csv (r'data_contribuciones_p14.csv', mode = 'a', sep = ',', index = False, header=False)
+    data_pledges.to_csv (r'data_contribuciones_p15.csv', mode = 'a', sep = ',', index = False, header=False)
     count_pledge += 1
     del data_pledges
     del df_pledges
