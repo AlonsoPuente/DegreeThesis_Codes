@@ -77,6 +77,8 @@ def getPageText(url):
     except (NoSuchElementException, StaleElementReferenceException, TimeoutException, IndexError, ValueError):
         pledge_amounts = []
     
+    driver.quit()
+    time.sleep(randint(1,10))
     return pledge_amounts
 
 print("Scraping...")
