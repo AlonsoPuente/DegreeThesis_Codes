@@ -1,8 +1,8 @@
-# Tesis_Titulacion
-Repositorio de códigos y scripts usados para el trabajo de tesis de Titulación de Ingeniero de T.I. y Sistemas.
+# Degree Thesis - Full material
+Repository of Jupyter Notebook (Python) scripts used for degree thesis theme "Funding state prediction for Kickstarter Technology projects using a Multimodal Deep Learning" to obtain Information Technology and Systems Engineer degree.
 
-Por las limitaciones de la página, las bases de datos se encuentran en los siguientes links:
+Due to page limitations, databases are found in the following links:
 
-* Descripciones: https://www.kaggle.com/alonsopuente/kickstarter-projects-descriptions
-* Metainformación: https://www.kaggle.com/alonsopuente/kickstarter-projects-metadata
+* Descriptions: https://www.kaggle.com/alonsopuente/kickstarter-projects-descriptions
+* Metadata: https://www.kaggle.com/alonsopuente/kickstarter-projects-metadata
 * Comentarios: https://www.kaggle.com/alonsopuente/kickstarter-projects-comments
