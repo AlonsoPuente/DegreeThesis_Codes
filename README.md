@@ -5,4 +5,4 @@ Due to page limitations, databases are found in the following links:
 
 * Descriptions: https://www.kaggle.com/alonsopuente/kickstarter-projects-descriptions
 * Metadata: https://www.kaggle.com/alonsopuente/kickstarter-projects-metadata
-* Comentarios: https://www.kaggle.com/alonsopuente/kickstarter-projects-comments
+* Comments: https://www.kaggle.com/alonsopuente/kickstarter-projects-comments
